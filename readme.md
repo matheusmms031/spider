@@ -1,6 +1,6 @@
 # SpiderScan
 
-O programa é um scanner de aplicações web completo, ele descobre rotas do site alvo usando uma wordlist como o Gobuster porém também possuí outras utilidades como: 
+O programa é um scanner de aplicações web completo, ele descobre rotas do site alvo usando uma *wordlist* como o (Gobuster)[] porém também possuí outras utilidades como: 
 
 1. Recolher links vulneráveis em cada rota.
 2. Testa ataques XSS.
