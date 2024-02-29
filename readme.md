@@ -9,3 +9,7 @@ O programa é um scanner de aplicações web completo, ele descobre rotas do sit
 ## Sua eficiência
 
 A aplicação possuí uma eficiência considerável em relação a outros concorrentes, porém continua atrás de certos outros pelo o uso do Python, mas como ele utiliza o `aiohttp` e a biblioteca `asyncio` acaba sendo bem eficiente por si só.
+
+## Como instalar
+
+Para utilizar o programa basta fazer um clone do repositório e executar usando `spider.py`.
