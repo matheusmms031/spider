@@ -13,12 +13,43 @@ parser.add_argument('-v','--verbose',action='store_true',help='Used for verbose 
 
 args = parser.parse_args()
 
+
 async def main():
-    urls = [linha.strip() for linha in open('common.txt')]
+    count = 0
+    arguments = [args.url,args.wordlist]
+    for c in arguments:
+        for y in arguments:
+            if len(c) >= len(y) :
+                count += 1
+        if count == len(arguments):
+            maior = c
+    print(maior)
+    print(len(args.url))
+    print(f"""
+  +_______________________________________ +     
+  |                                       |                 
+  |                                       |         
+  |              \033[033mSpider Scan\033[m              | 
+  |              DEVELOPMENT              | 
+  |                                       |
+  |         By: Matheus Magalhães         |             
+  |                                       |
+  |_______________________________________|
+  +                                       +
+
+ _______________{'_'*len(maior)}____             
+|               {' '*len(maior)}    |
+|   URL       : {args.url}{' '*(len(maior)-len(args.url))}    |
+|   VERBOSE   : {args.verbose}{' '*(len(maior)-5)}    |
+|   WORDLIST  : {args.wordlist}{' '*(len(maior)-len(args.wordlist))}    |
+|_______________{'_'*len(maior)}____|
+
+""")
+    urls = [linha.strip() for linha in open(args.wordlist)] 
     tasks = [send_request(f"{args.url}/{url}") for url in urls]
     for task in tasks:
         resultado = await task
-        print(resultado.status)
+        print(f"[x]> {urls[tasks.index(task)]} | {resultado.status}")
 
 asyncio.run(main())
 print(args.verbose)
